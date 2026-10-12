@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  playwright-tests:
+    build: .
+    image: playwright-tests
+    container_name: playwright_qa_container
+    env_file:
+      - .env
+    volumes:
+      - ./test-results:/app/test-results
